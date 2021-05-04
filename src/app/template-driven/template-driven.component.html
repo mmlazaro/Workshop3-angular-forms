@@ -1,0 +1,57 @@
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <label for="email">
+        Email
+        <input type="email" name="email1" id="name" email ngModel>
+    </label>
+    <label for="firstName">
+      First Name
+      <span>*</span>
+      <input type="text" name="firstName" id="firstName" [(ngModel)]="formValue.firstName" required>
+    </label>
+  
+    <label for="lastName">
+      Last Name
+      <span>*</span>
+      <input type="text" name="lastName" id="lastName" [(ngModel)]="formValue.lastName" required>
+    </label>
+  
+    <div>
+      <h3>Address</h3>
+      <label for="street">
+        Street
+        <input type="text" name="street" id="street" [(ngModel)]="formValue.street">
+      </label>
+  
+      <label for="city">
+        City
+        <input type="text" name="city" id="city" [(ngModel)]="formValue.city">
+      </label>
+    </div>
+
+    <label for="confirmed">
+        Confirmed
+        <span>*</span>
+        <input type="checkbox" name="confirmed" id="confirmed" [(ngModel)]="formValue.confirmed" required>
+    </label>
+
+    <label for="comment">
+        Comment
+        <textarea name="comment" id="comment" [(ngModel)]="formValue.comment" maxlength="200"></textarea>
+    </label>
+  
+    <button type="submit" [disabled]="!form.valid">Submit</button>
+  </form>
+  
+  <hr>
+  
+  {{ formValue | json}}
+  <p>
+    Form Value: {{ form.value | json }}
+  </p>
+  
+  
+  <p>
+    Form Status: {{ form.status }}
+  </p>
+
+  

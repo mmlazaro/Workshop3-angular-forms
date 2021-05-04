@@ -1,0 +1,10 @@
+<h1 *ngIf="editor==='template'">Template driven form</h1>
+<h1 *ngIf="editor==='reactive'">Reactive form</h1>
+
+<nav>
+  <a (click)="toggleEditor('template')">Go to template driven form</a>
+  <a (click)="toggleEditor('reactive')">Go to reactive form</a>
+</nav>
+
+<app-template-driven *ngIf="showTemplateEditor"></app-template-driven>
+<app-reactive *ngIf="showReactiveEditor"></app-reactive>
